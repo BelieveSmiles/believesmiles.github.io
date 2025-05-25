@@ -1,0 +1,196 @@
+/* 移动端优先的响应式CSS */
+:root {
+    --primary-color: rgba(255, 255, 255, 0.9);
+    --secondary-color: rgba(255, 255, 255, 0.7);
+    --bg-blur: blur(10px);
+    --section-spacing: 1.5rem;
+}
+
+/* 基础重置优化 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    /* 移除点击高光 */
+    touch-action: manipulation;
+    /* 优化触控行为 */
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    /* 禁止字体自动缩放 */
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    overscroll-behavior-y: contain;
+    /* 防止弹性滚动 */
+}
+
+/* 视频容器移动端优化 */
+.header-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bg-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* 移动端视频优化 */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* 欢迎文字移动端适配 */
+.welcome-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+.welcome-text h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    /* 响应式字体 */
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-text p {
+    font-size: clamp(0.875rem, 3vw, 1.25rem);
+    color: var(--secondary-color);
+}
+
+/* 内容区域移动端优化 */
+.content-section {
+    padding: var(--section-spacing);
+    margin: 2rem 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: var(--bg-blur);
+    border-radius: 1rem;
+    width: 95%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-card h2 {
+    font-size: 1.375rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.content-card p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    line-height: 1.7;
+}
+
+/* 音乐播放器移动端适配 */
+.music-player {
+    bottom: 1rem;
+    right: 1rem;
+    width: calc(100% - 2rem);
+    max-width: 400px;
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+
+/* 按钮触控优化 */
+button {
+    min-width: 44px;
+    /* 可点击区域符合WCAG标准 */
+    min-height: 44px;
+    padding: 0.5rem;
+}
+
+/* 响应式媒体查询 */
+@media (max-width: 768px) {
+    .header-container {
+        height: 70vh;
+        /* 缩小视频区域高度 */
+    }
+
+    .content-section {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    /* 隐藏非必要装饰元素 */
+    .scroll-down {
+        display: none;
+    }
+
+    /* 优化视频播放性能 */
+    #bg-video {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --section-spacing: 1rem;
+    }
+
+    .content-card p {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+    }
+
+    /* 提升触控体验 */
+    a,
+    button {
+        font-size: 1rem;
+    }
+}
+
+/* 性能优化相关 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* 黑暗模式适配 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: rgba(255, 255, 255, 0.9);
+        --secondary-color: rgba(255, 255, 255, 0.7);
+    }
+
+    body {
+        background: #121212;
+    }
+}
+
+/* 移动端横屏适配 */
+@media (orientation: landscape) and (max-width: 768px) {
+    .header-container {
+        height: 100vh;
+    }
+
+    .welcome-text {
+        top: 40%;
+    }
+
+    .content-section {
+        margin: 1rem auto;
+    }
+}
