@@ -1,0 +1,192 @@
+/* treehole.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    line-height: 1.8;
+    color: #4a5568;
+    background: linear-gradient(135deg, #e6f7ff 0%, #f0f8ff 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.treehole-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.treehole-letter {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(138, 149, 184, 0.15);
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.treehole-letter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ffb8c6, #a8c6db, #8a9db8);
+}
+
+.letter-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.letter-header h1 {
+    font-size: 2.8rem;
+    color: #5a7d9a;
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.date {
+    font-size: 1.1rem;
+    color: #a8c6db;
+    font-style: italic;
+}
+
+.letter-content {
+    font-size: 1.2rem;
+}
+
+.letter-content p {
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.letter-content ul {
+    margin: 25px 0 25px 40px;
+}
+
+.letter-content li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.letter-content li::before {
+    content: "•";
+    color: #ffb8c6;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: -8px;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    margin-top: 40px;
+    color: #5a7d9a;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.treehole-back {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.treehole-back a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #5a7d9a;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.treehole-back a:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(138, 149, 184, 0.2);
+}
+
+.treehole-back i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* 装饰元素 */
+.deco-leaf {
+    position: absolute;
+    color: #a3d9b1;
+    font-size: 2rem;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.deco-leaf-1 { top: 10%; left: 5%; transform: rotate(-20deg); }
+.deco-leaf-2 { top: 15%; right: 7%; transform: rotate(25deg); }
+.deco-leaf-3 { bottom: 20%; left: 8%; transform: rotate(15deg); }
+.deco-leaf-4 { bottom: 15%; right: 10%; transform: rotate(-30deg); }
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .treehole-container {
+        padding: 20px 15px;
+    }
+    
+    .treehole-letter {
+        padding: 30px 20px;
+    }
+    
+    .letter-header h1 {
+        font-size: 2rem;
+    }
+    
+    .letter-content {
+        font-size: 1.1rem;
+    }
+    
+    .letter-content ul {
+        margin-left: 25px;
+    }
+    
+    .letter-content li {
+        padding-left: 25px;
+    }
+    
+    .treehole-back a {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .treehole-letter {
+        padding: 25px 15px;
+    }
+    
+    .letter-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .letter-content {
+        font-size: 1rem;
+    }
+    
+    .letter-content li {
+        margin-bottom: 10px;
+    }
+}
