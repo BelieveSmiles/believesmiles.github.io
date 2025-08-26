@@ -79,3 +79,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// 侧边导航栏交互
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebarNav = document.querySelector('.sidebar-nav');
+    const navItems = document.querySelectorAll('.nav-links li a');
+    
+    // 添加点击事件
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // 移除所有活跃状态
+            navItems.forEach(navItem => navItem.classList.remove('active'));
+            // 添加当前项活跃状态
+            this.classList.add('active');
+        });
+    });
+    
+    // 移动设备触摸事件
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    sidebarNav.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    sidebarNav.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+        if (touchEndX < touchStartX) {
+            sidebarNav.classList.remove('expanded');
+        }
+        if (touchEndX > touchStartX) {
+            sidebarNav.classList.add('expanded');
+        }
+    }
+});

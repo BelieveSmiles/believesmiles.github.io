@@ -1,86 +1,81 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ForgottenDream</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css\index.css">
     <link rel="stylesheet" href="css\mobile.css">
     <link rel="stylesheet" href="css\optimize.css">
 </head>
+
 <body>
+    <!-- 侧边伸缩导航栏 -->
+    <nav class="sidebar-nav">
+        <div class="nav-header">
+            <i class="fas fa-bars"></i>
+            <span>菜单</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i><span>首页</span></a></li>
+            <li><a href="show.html"><i class="fas fa-palette"></i><span>艺术展厅</span></a></li>
+            <li><a href="treehole.html"><i class="fas fa-leaf"></i><span>心灵树洞</span></a></li>
+        </ul>
+        <div class="nav-footer">
+            <a href="https://github.com/BelieveSmiles" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </nav>
+
     <!-- 头部视频区 -->
     <div class="header-container">
         <video id="bg-video" autoplay muted loop playsinline>
             <source src="" type="video/mp4">
         </video>
-        
+
         <div class="welcome-text">
             <h1>Welcome to My Universe</h1>
             <p>Scroll to Explore</p>
         </div>
-        
+
         <div class="scroll-down">
             <i class="fas fa-chevron-down"></i>
         </div>
     </div>
-    
+
     <!-- 个性签名区 - 极简设计 -->
     <div class="signature-section">
         <div class="signature-container">
             <div class="signature">
-                <div class="signature-text">请活着，请开心</div>
+                <div class="signature-text">对世界大喊"Hello World"~</div>
             </div>
-            
+
             <div class="signature-divider"></div>
-            
+
             <div class="explanation">
-                无需故作高深，迷茫也可以感受阳光<br>
-                EVERYONE CAN LIVE HAPPILY
+                一位无名小卒的个人网站<br>
+                A PERSONAL WEBSITE OF AN UNKNOWN NOBODY
             </div>
         </div>
     </div>
-    
+
     <!-- 内容区域 -->
     <div class="content-section section-1">
         <div class="content-card">
             <h2>About Me</h2>
             <p>
-                <span class="highlight">普普通通，碌碌无为</span><br>
-                全网同名: <span class="highlight">ForgottenDream/被遗忘的梦</span>
+                名字: <span class="highlight">ForgottenDream/被遗忘的梦</span><br>
+                爱好: <span class="highlight">看动漫，玩游戏</span><br>
             </p>
         </div>
     </div>
-    
+
     <div class="content-section section-2">
-        <div class="content-card">
-            <h2>Projects</h2>
-            <p>
-                我的作品会悄悄在这儿生根
-            </p>
-            <div style="margin-top: 50px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
-                <div class="project-card" style="background: #f8f9fa; padding: 25px; border-radius: 15px; transition: transform 0.3s ease; text-align: center;">
-                    <i class="fas fa-palette" style="font-size: 2.5rem; color: var(--dark-color); margin-bottom: 20px; display: block;"></i>
-                    <h3 style="color: var(--dark-color); margin-bottom: 15px; font-size: 1.4rem;">涂鸦</h3>
-                    <p style="font-size: 1.1rem;">一些画作或是一些建模</p>
-                </div>
-                <div class="project-card" style="background: #f8f9fa; padding: 25px; border-radius: 15px; transition: transform 0.3s ease; text-align: center;">
-                    <i class="fas fa-gamepad" style="font-size: 2.5rem; color: var(--dark-color); margin-bottom: 20px; display: block;"></i>
-                    <h3 style="color: var(--dark-color); margin-bottom: 15px; font-size: 1.4rem;">代码</h3>
-                    <p style="font-size: 1.1rem;">前后端与游戏的开发</p>
-                </div>
-                <div class="project-card" style="background: #f8f9fa; padding: 25px; border-radius: 15px; transition: transform 0.3s ease; text-align: center;">
-                    <i class="fas fa-cube" style="font-size: 2.5rem; color: var(--dark-color); margin-bottom: 20px; display: block;"></i>
-                    <h3 style="color: var(--dark-color); margin-bottom: 15px; font-size: 1.4rem;">快乐</h3>
-                    <p style="font-size: 1.1rem;">每个人都可以拥有和分享</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="content-section section-3">
         <div class="content-card">
             <h2>Contact Me</h2>
             <p>
@@ -91,7 +86,8 @@
             <div style="margin-top: 50px; text-align: center;">
                 <h3 style="font-size: 1.5rem; color: var(--dark-color); margin-bottom: 30px;">找到我</h3>
                 <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
-                    <a href="https://github.com/BelieveSmiles" style="display: inline-block; width: 60px; height: 60px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition);">
+                    <a href="https://github.com/BelieveSmiles"
+                        style="display: inline-block; width: 60px; height: 60px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition);">
                         <i class="fab fa-github" style="font-size: 1.8rem; color: var(--dark-color);"></i>
                     </a>
                 </div>
@@ -99,13 +95,6 @@
         </div>
     </div>
 
-    <div class="treehole-btn">
-        <a href="treehole.html">
-            <i class="fas fa-leaf"></i>
-            <span>如果你累了</span>
-        </a>
-    </div>
-    
     <!-- 页脚 -->
     <footer>
         <div class="social-links">
@@ -116,7 +105,9 @@
             © 2024 ForgottenDream | 被遗忘的梦
         </div>
     </footer>
-    
+
     <script src="js\index.js"></script>
+    <script src="js\refresh.js"></script>
 </body>
+
 </html>
