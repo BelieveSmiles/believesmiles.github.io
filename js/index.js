@@ -43,7 +43,7 @@ document.querySelectorAll('.project-card').forEach(card => {
 });
 
 // 圆形按钮悬停效果
-document.querySelectorAll('footer .social-links a, .section-3 a').forEach(btn => {
+document.querySelectorAll('.section-3 a').forEach(btn => {
     btn.addEventListener('mouseenter', () => {
         btn.style.transform = 'translateY(-8px) scale(1.1)';
         btn.style.background = 'rgba(168, 198, 219, 0.2)';

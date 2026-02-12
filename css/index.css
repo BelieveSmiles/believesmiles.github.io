@@ -159,53 +159,55 @@
 }
 
 
-
-
-
+/* 签名区 */
 .signature-section {
-    min-height: 100vh;
-    position: relative;
+    min-height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #1a2a3a 0%, #0d1b26 100%);
+    background: #f8f9fa;
+    position: relative;
     overflow: hidden;
-    padding: 20px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease;
-}
-
-.signature-section.active {
-    opacity: 1;
-    transform: translateY(0);
+    padding: 40px 20px;
 }
 
 .signature-container {
+    max-width: 900px;
     text-align: center;
-    max-width: 800px;
-    padding: 30px;
+    padding: 60px 40px;
+    position: relative;
     z-index: 10;
 }
 
 .signature {
-    font-size: 4.5rem;
+    font-size: 3.2rem;
     font-weight: 300;
-    color: #e4f0fb;
-    margin-bottom: 40px;
+    color: #5a7d9a;
+    margin-bottom: 30px;
     position: relative;
-    min-height: 120px;
+    min-height: 100px;
+    letter-spacing: 1px;
+    line-height: 1.4;
 }
 
 .signature-text {
     display: inline-block;
+    position: relative;
     border-right: 3px solid #5a8db0;
-    padding-right: 10px;
+    padding-right: 0 10px;
     white-space: nowrap;
     overflow: hidden;
     animation:
-        typing 3.5s steps(30, end),
+        typing 1.5s steps(20, end),
         blink-caret .75s step-end infinite;
+} 
+
+.signature-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a8c6db, transparent);
+    margin: 40px auto;
+    opacity: 0.6;
 }
 
 .explanation {
@@ -229,7 +231,7 @@
     }
 
     to {
-        width: 100%
+        width: 80%
     }
 }
 
@@ -437,44 +439,6 @@ body {
     }
 }
 
-/* 签名区 - 极简优雅设计 */
-.signature-section {
-    min-height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f8f9fa;
-    position: relative;
-    overflow: hidden;
-    padding: 40px 20px;
-}
-
-.signature-container {
-    max-width: 900px;
-    text-align: center;
-    padding: 60px 40px;
-    position: relative;
-    z-index: 10;
-}
-
-.signature {
-    font-size: 3.2rem;
-    font-weight: 300;
-    color: #5a7d9a;
-    margin-bottom: 30px;
-    position: relative;
-    min-height: 100px;
-    letter-spacing: 1px;
-    line-height: 1.4;
-}
-
-.signature-text {
-    display: inline-block;
-    position: relative;
-    padding: 0 10px;
-    animation: fadeInUp 1.2s ease-out;
-}
-
 .explanation {
     font-size: 1.5rem;
     color: #718096;
@@ -486,14 +450,6 @@ body {
     padding: 30px 0;
     animation: fadeIn 1.8s ease-out 0.5s both;
     font-style: italic;
-}
-
-.signature-divider {
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #a8c6db, transparent);
-    margin: 40px auto;
-    opacity: 0.6;
 }
 
 /* 内容区域 - 清新简约风格 */
@@ -687,28 +643,4 @@ body {
 
 .sidebar-nav:hover .nav-links li a span {
     opacity: 1;
-}
-
-.nav-footer {
-    padding: 15px 0;
-    border-top: 1px solid rgba(138, 149, 184, 0.1);
-    text-align: center;
-}
-
-.nav-footer a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(168, 198, 219, 0.2);
-    color: var(--dark-color);
-    transition: all 0.3s ease;
-}
-
-.nav-footer a:hover {
-    background: var(--secondary-color);
-    color: white;
-    transform: translateY(-3px);
 }
