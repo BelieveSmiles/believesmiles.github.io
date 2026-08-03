@@ -33,7 +33,7 @@
         display: none;
     }
 }
-
+/* 
 @media (max-width: 768px) {
     .sidebar-nav {
         width: 50px;
@@ -80,5 +80,72 @@
     .nav-links li a span {
         font-size: 0.7rem;
         opacity: 1;
+    }
+} */
+
+@media (max-width: 768px) {
+    .sidebar-nav {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;               /* 高度撑满 */
+        width: 260px;            /* 展开宽度 */
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        flex-direction: column;  /* 恢复竖向排列 */
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(5px);
+        box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    /* 展开状态 */
+    .sidebar-nav.expanded {
+        transform: translateX(0);
+    }
+
+    /* 头部恢复显示 */
+    .nav-header {
+        display: flex !important;
+        padding: 20px 20px;
+        border-bottom: 1px solid rgba(138,149,184,0.1);
+    }
+
+    /* 导航链接恢复竖向列表 */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        flex: none;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        flex-direction: row;          /* 图标+文字横向 */
+        padding: 15px 20px;
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .nav-links li a i {
+        margin-right: 15px;
+        margin-bottom: 0;
+        font-size: 1.3rem;
+    }
+
+    .nav-links li a span {
+        font-size: 1rem;
+        opacity: 1;                  /* 文字默认可见，移动端无 hover */
+    }
+
+    /* 去掉原先底部导航的样式残留 */
+    .sidebar-nav:hover {
+        width: 260px;                /* 取消 hover 宽度变化 */
     }
 }
