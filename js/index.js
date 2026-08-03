@@ -1,9 +1,11 @@
 // 顶部视频随机播放
-// const mp4_list = [
-//     "智乃壁纸.mp4",
-// ];
-// const current = mp4_list[Math.floor(Math.random() * mp4_list.length)];
-// document.getElementById("bg-video").src = current;
+const mp4_list = [
+    "智乃壁纸.mp4",
+    "要被借钱的波奇酱.mp4",
+    "洛奇希.mp4"
+];
+const current = mp4_list[Math.floor(Math.random() * mp4_list.length)];
+document.getElementById("bg-video").src = "paper/" + current;
 
 // 滚动特效
 const sections = document.querySelectorAll('.content-section, .signature-section');
